@@ -8,6 +8,7 @@ import {
     returnAsAString,
     makeLuckyGreeting,
     getSecondItem,
+    getLastItem,
 } from '../functions.js';
 
 const { test, skip } = QUnit;
@@ -100,7 +101,7 @@ test('returnAsAString should take in three numbers and return them as a string',
     const expected1 = '854';
 
     const actual2 = returnAsAString(7, 6, 5);
-    const expected2 ='765';
+    const expected2 = '765';
 
     const actual3 = returnAsAString(9, 2, 0);
     const expected3 = '920';
@@ -111,7 +112,7 @@ test('returnAsAString should take in three numbers and return them as a string',
 });
 
 test('makeLuckyGreeting should take 2 numbers and combine them to make you lucky numbers', (expect) => {
-    const actual1 = makeLuckyGreeting(13, 13)
+    const actual1 = makeLuckyGreeting(13, 13);
     const expected1 = 26;
 
     const actual2 = makeLuckyGreeting(2, 3);
@@ -121,8 +122,8 @@ test('makeLuckyGreeting should take 2 numbers and combine them to make you lucky
     const expected3 = 13;
 
     expect.equal(actual1, expected1, 'Should return 26');
-    expect.equal(actual2, expected2, 'should return "5"')
-    expect.equal(actual1, expected1, 'should return "13"')
+    expect.equal(actual2, expected2, 'should return "5"');
+    expect.equal(actual3, expected3, 'should return "13"');
 
 });
 
@@ -136,9 +137,24 @@ test('getSecondItem should return the second item in an array', (expect) =>{
     const actual3 = getSecondItem(['pickle', 'mustard', 'tomato', 'lettuce']);
     const expected3 = 'mustard';
 
-    expect.deepEqual(actual1, expected1, 'should return "lemon"')
-    expect.deepEqual(actual2, expected2, 'should return "Luigi"')
-    expect.deepEqual(actual3, expected3, 'should return "mustard"')
+    expect.deepEqual(actual1, expected1, 'should return "lemon"');
+    expect.deepEqual(actual2, expected2, 'should return "Luigi"');
+    expect.deepEqual(actual3, expected3, 'should return "mustard"');
+});
+
+test('get last item should return the last item in an  array', (expect) => {
+    const actual1 = getLastItem(['wii', 'atari', 'xbox', 'PS4']);
+    const expected1 = 'PS4';
+
+    const actual2 = getLastItem(['gum', 'pretzel', 'beer']);
+    const expected2 = 'beer';
+
+    const actual3 = getLastItem(['chicken', 'pork', 'beef', 'deer', 'elk']);
+    const expected3 = 'elk';
+
+    expect.deepEqual(actual1, expected1, 'should return "PS4"');
+    expect.deepEqual(actual2, expected2, 'should return "beer"');
+    expect.deepEqual(actual3, expected3, 'should return "elk"');
 });
 
 
